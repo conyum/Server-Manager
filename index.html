@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Server Manager</h1></header>
+  <div class="container">
+    <aside class="sidebar">
+      <form id="addForm">
+        <h2>Add Server</h2>
+        <input id="host" type="text" placeholder="Host" required>
+        <input id="port" type="number" placeholder="Port" value="22" required>
+        <input id="username" type="text" placeholder="Username" required>
+        <input id="password" type="password" placeholder="Password (opt)">
+        <input id="privateKey" type="text" placeholder="Private Key Path (opt)">
+        <button type="submit">Add</button>
+      </form>
+      <h2>Servers</h2>
+      <ul id="serverList"></ul>
+      <section class="sidebar-tools">
+        <button id="exportBtn" disabled>Export Servers</button>
+        <button id="importBtn">Import Servers</button>
+        </section>
+    </aside>
+    <main class="main-panel">
+      <div id="status" class="status-default">Not connected</div>
+      <section class="tools">
+        <button id="connectBtn">Connect</button>
+        <button id="uptimeBtn" disabled>Uptime</button>
+        <button id="diskBtn" disabled>Disk Usage</button>
+        <button id="memBtn" disabled>Memory Usage</button>
+        <button id="psBtn" disabled>Process List</button>
+        <button id="svcListBtn" disabled>List Services</button>
+        <button id="svcRestartBtn" disabled>Restart Service</button>
+        <button id="updateSysBtn" disabled>Update System</button>
+        <button id="logsBtn" disabled>Tail Syslog</button>
+        <button id="topBtn" disabled>Show Top</button>
+        <button id="netBtn" disabled>Network Status</button>
+        <button id="usersBtn" disabled>List Users</button>
+        <button id="portsBtn" disabled>Open Ports</button>
+        <button id="cronBtn" disabled>Cron Jobs</button>
+        <button id="backupBtn" disabled>Backup /var/www</button>
+        <button id="cdBtn" disabled>cd ..</button>
+        <button id="lsBtn" disabled>ls -a</button>
+        <button id="sudoBtn" disabled>sudo su</button>
+        <button id="speedBtn" disabled>Speedtest</button>
+        <button id="whoBtn" disabled>whoami</button>
+      </section>
+      <section class="console-container">
+        <button id="clearBtn" class="clear-btn" title="Clear Console">✕</button>
+        <pre id="consoleOutput"></pre>
+      </section>
+      <div class="manual">
+        <input id="manualInput" placeholder="Manual command…" />
+<button id="runBtn" disabled>Run</button>
+      </div>
+    </main>
+    <aside class="stats-panel">
+      <h2>Realtime Stats</h2>
+      <div class="stat"><span class="label">CPU:</span> <span id="statCpu">-</span></div>
+      <div class="stat"><span class="label">RAM:</span> <span id="statRam">-</span></div>
+      <div class="stat"><span class="label">Disk:</span> <span id="statDisk">-</span></div>
+      <div class="stat"><span class="label">Net:</span> <span id="statNet">-</span></div>
+    </aside>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

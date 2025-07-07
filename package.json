@@ -1,0 +1,46 @@
+{
+  "name": "yumserv",
+  "version": "1.0.5",
+  "description": "GUI to manage Linux servers over SSH",
+  "author": "yummii",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "electron-prompt": "^1.7.0",
+    "electron-store": "^8.1.0",
+    "node-ssh": "^13.2.1"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.yummii.servermanager",
+    "productName": "Server Manager",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icon.png"
+    },
+    "publish": null
+  }
+}

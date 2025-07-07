@@ -1,0 +1,186 @@
+:root {
+    --bg: #121212;
+    --fg: #e0e0e0;
+    --accent: #bb86fc;
+    --border: #333;
+}
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+}
+header {
+    background: var(--accent);
+    padding: 10px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    color: #fff;
+}
+.container {
+    display: flex;
+    height: calc(100% - 52px);
+}
+.sidebar {
+    width: 280px;
+    padding: 20px;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+}
+.main-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow: hidden;
+}
+.stats-panel {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+}
+#status {
+    background: var(--border);
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.status-default {
+    color: #888;
+}
+.status-connecting {
+    color: orange;
+}
+.status-success {
+    color: lime;
+}
+.status-error {
+    color: red;
+}
+.tools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.tools button {
+    padding: 8px;
+}
+.console-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 16px;
+}
+.clear-btn {
+    position: absolute;
+    bottom: -13px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    color: var(--fg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#consoleOutput {
+    background: #1e1e1e;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.manual {
+    display: flex;
+    gap: 8px;
+}
+.manual input {
+    flex: 1;
+}
+input,
+button {
+    background: var(--bg);
+    color: var(--fg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px;
+}
+button:hover {
+    background: var(--border);
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    position: relative;
+    padding: 8px 32px 8px 8px;
+    margin: 4px 0;
+    background: #1f1f1f;
+    cursor: pointer;
+    border-radius: 4px;
+}
+ul li.selected {
+    background: var(--accent);
+}
+ul li .remove-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    color: var(--fg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+.stats-panel h2 {
+    margin-top: 0;
+}
+.stats-panel .stat {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+.stats-panel .label {
+    font-weight: 700;
+}
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+*::-webkit-scrollbar-track {
+    background: #fff0;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent);
+}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) #fff0;
+}
