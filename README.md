@@ -12,7 +12,8 @@ A dark-themed, cross-platform desktop application for managing Linux servers ove
 4. [Import & Export](#import--export)  
 5. [Configuration](#configuration)  
 6. [Contributing](#contributing)  
-7. [License](#license)  
+7. [License](#license)
+8. [NOTE!](#note)    
 
 ---
 
@@ -106,8 +107,10 @@ Contributions, bug reports and feature requests are welcome!
 Please adhere to existing code style and ensure your changes do not introduce regressions.
 
 ---
-
-As github doesnt seem to have the license i usally work with ill state it here - **WTFPL**
+---
+## Note
+* This manager is only tested against a few Debian servers. It should work with most servers, but will need to be adjusted for those dists that's not as awesome as debian.
+* As github doesnt seem to have the license i usally work with ill state it here - **WTFPL**
 
 ## License
 
